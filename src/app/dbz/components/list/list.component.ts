@@ -6,24 +6,24 @@ import { Character } from '../../interfaces/character.interface';
   standalone: false,
 
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
 })
-
-export  class ListComponent {
-
+export class ListComponent {
   @Input()
-public characterList: Character[] = [{
-  name: 'Trunk',
-  power: 100
-}];
+  public characterList: Character[] = [
+    {
+      name: 'Trunk',
+      power: 100,
+    },
+  ];
 
-@Output()
-public onDelete: EventEmitter<string> = new EventEmitter
+  @Output()
+  public onDelete: EventEmitter<string> = new EventEmitter();
 
-onDeleteCharacter(id: string): void {
-  if (!id) return; {
-
- this.onDelete.emit(id);
+  onDeleteCharacter(id?: string): void {
+    if (!id) return;
+    {
+      this.onDelete.emit(id);
+    }
   }
-}
 }

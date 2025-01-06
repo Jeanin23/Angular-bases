@@ -12,7 +12,7 @@ import { DbzService } from "../services/dbz.service";
 export class MainPageComponent  {
 constructor ( private dbzService: DbzService) {}
 
-get Characters(): Character[] {
+get characters(): Character[] {
   return [...this.dbzService.characters];
 }
 
@@ -20,7 +20,7 @@ onDeleteCharacter(id: string): void {
   this.dbzService.deleteCharacterById(id)
 }
 
-onNewCharacter (Character: Character): void {
-  this.dbzService.addCharacter(Character);
+onNewCharacter (character: Character): void {
+  this.dbzService.addCharacter(character);
 }
 }
